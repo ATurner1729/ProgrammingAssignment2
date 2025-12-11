@@ -1,10 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions take an invertible matrix, invert it, and store the inverse
+## in a cache.  If the inverse for a matrix input is already in the cache, 
+## pull the cached inverse.  Otherwise calculate the inverse. 
 
-## makeVector creates setter and getter functions for the matrix to be
-## cached
+## makeCacheMatrix creates setter and getter functions for the matrix to be
+## cached, and returns a list of functions and variables to cache the inverse
 
-makeVector <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
     set <- function(y) {
         x <<- y
